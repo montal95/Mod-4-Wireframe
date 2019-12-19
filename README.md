@@ -9,9 +9,11 @@ You've been through quite a few Project Modes by now and should have some idea h
 In the past, you've been responsible for determining the structure of your projects. This time, you are being given a directive - you will be creating a to-do list App called Flatnote. The wire-framing for your MVP has been provided for you below. Take a close look at all of the components that you'll need to build and begin thinking about how you might organize the structure of your App so that it has the following basic functionality:
 
 
-![wire-frame](Login_Home.png)
-![new-note](New_note.png)
-![show](Show_edit.png)
+![login](Login.png)
+![dash](Dash.png)
+![new](New.png)
+![edit](edit.png)
+![show](Show.png)
 
 ## Requirements
 
