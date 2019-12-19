@@ -23,7 +23,7 @@ In addition to using the above wire-frame to structure your App, your project sh
 - Have at least three resources on the backend and your application. 
 - You must have full CRUD actions for at least one resource (this will probably be your to-do item or note).
 - Use Redux for site navigation
-- Use React Router for site navigation
+- Use React Router for site navigation(see routes on wire-frame for guidance with this)
 - A sign-in page **note - this does not need to be a secure login - a user can sign in with just their username
 
 
