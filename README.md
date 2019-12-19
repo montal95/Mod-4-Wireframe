@@ -10,6 +10,8 @@ For this project, you will be creating a to-do list App. You have been provided 
 
 
 ![wire-frame](Login_home.png)
+![new-note](New_note.png)
+![show](Show_edit.png)
 
 and meet the following requirements:
 
