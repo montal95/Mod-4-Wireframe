@@ -2,26 +2,28 @@
 
 You've made it! You're ready to build a React application with Redux! Before you start ideating, think about some of the project requirements. 
 
-## Requirements
+## Flatnote
 
 You've been through quite a few Project Modes by now and should have some idea how to think about scoping a project, what you can accomplish in the designated time, and what is expected of you in terms of meeting complexity requirements.
 
-For this project, you will be creating a to-do list App. You have been provided with wire-framing below, to help guide you towards an MVP. Take a close look at all of the components that you'll need to build and begin thinking about how they might be organized:
+In the past, you've been responsible for determining the structure of your projects. This time, you are being given a directive - you will be creating a to-do list App called Flatnote. The wire-framing for your MVP has been provided for you below. Take a close look at all of the components that you'll need to build and begin thinking about how you might organize the structure of your App so that it has the following basic functionality:
 
 
 ![wire-frame](Login_Home.png)
 ![new-note](New_note.png)
 ![show](Show_edit.png)
 
-and meet the following requirements:
+## Requirements
 
-1. Use a _Rails API backend_ with a separate _React frontend_ that are created in two different Github repositories.
-2. Have at least three resources on the backend and your application. 
-3. You must have full CRUD actions for at least one resource (this will probably be your to-do item).
-4. A sign-in page **note - this does not need to be a secure login 
+In addition to using the above wire-frame to structure your App, your project should meet the following requirements:
+
+- Use a _Rails API backend_ with a separate _React frontend_ that are created in two different Github repositories.
+- Have at least three resources on the backend and your application. 
+- You must have full CRUD actions for at least one resource (this will probably be your to-do item).
+- A sign-in page **note - this does not need to be a secure login 
 
 
-If you create a fully functional MVP and have time left over, you can begin to work on stretch goals. Keep in mind that this is an excellent opportunity for you to practice using tools that you may want to incorporate into your Mod 5 project. Feel free to set your own goals or to attempt any of the following:
+If you create a fully functional MVP and have time left over, you may begin to work on stretch goals. Keep in mind that this is an excellent opportunity for you to practice using tools that you may want to incorporate into your Mod 5 project. Feel free to set your own goals or to attempt any of the following suggestions:
 
 - **Strongly Recommended:** Style your App using basic CSS or by incorporating a CSS framework like Bootstrap, Semantic, Material UI, etc.
 - **Strongly Recommended:** Refactor your code to use React Router for site navigation. While this isn't required, it will make navigation much easier to handle.
