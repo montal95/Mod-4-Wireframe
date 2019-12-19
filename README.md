@@ -6,7 +6,7 @@ You've made it! You're ready to build a React application with Redux! Before you
 
 You've been through quite a few Project Modes by now and should have some idea how to think about scoping a project, what you can accomplish in the designated time, and what is expected of you in terms of meeting complexity requirements.
 
-For this project, you will be creating a to-do list App. You have been provided with wire-framing below, to help guide you towards an MVP. At a minimum, your App should look like this:
+For this project, you will be creating a to-do list App. You have been provided with wire-framing below, to help guide you towards an MVP. Take a close look at all of the components that you'll need to build and begin thinking about how they might be organized:
 
 
 ![wire-frame](Login_Home.png)
@@ -24,7 +24,7 @@ and meet the following requirements:
 If you create a fully functional MVP and have time left over, you can begin to work on stretch goals. Keep in mind that this is an excellent opportunity for you to practice using tools that you may want to incorporate into your Mod 5 project. Feel free to set your own goals or to attempt any of the following:
 
 - **Strongly Recommended:** Style your App using basic CSS or by incorporating a CSS framework like Bootstrap, Semantic, Material UI, etc.
-- **Strongly Recommended:** Refactor your code to use React Router for site navigation. Include at least two different *client-side routes* (i.e. use react-router). Ex: even if your whole app is mostly a single page app, have the form to signup be found at `/signup`
+- **Strongly Recommended:** Refactor your code to use React Router for site navigation. While this isn't required, it will make navigation much easier to handle.
 - Add the ability to filter by body, date created, date edited, etc.
 - Sorting by date created, date edited, alphabetical, etc.
 - Use `react-router` to create a multi-page app
