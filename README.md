@@ -9,7 +9,7 @@ You've been through quite a few Project Modes by now and should have some idea h
 For this project, you will be creating a to-do list App. You have been provided with wire-framing below, to help guide you towards an MVP. At a minimum, your App should look like this:
 
 
-**********************
+![result]('Screen Shot 2019-12-19 at 10.09.21 AM.png')
 
 and meet the following requirements:
 
