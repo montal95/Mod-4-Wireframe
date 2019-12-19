@@ -19,7 +19,7 @@ In addition to using the above wire-frame to structure your App, your project sh
 
 - Use a _Rails API backend_ with a separate _React frontend_ that are created in two different Github repositories.
 - Have at least three resources on the backend and your application. 
-- You must have full CRUD actions for at least one resource (this will probably be your to-do item).
+- You must have full CRUD actions for at least one resource (this will probably be your to-do item or note).
 - A sign-in page **note - this does not need to be a secure login 
 
 
