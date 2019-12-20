@@ -37,7 +37,7 @@ If you create a fully functional MVP and have time left over, you may begin to w
 - Sharing notes with other users
 - Rich text formatting
 - Emailing notes
-- Use google or facebook to login - *Check out [THIS](https://developers.google.com/identity/sign-in/web/sign-in) for help with incorporating this into your project*
+- Use google or facebook to login - *Check out [THIS](https://developers.google.com/identity/sign-in/web/sign-in) resource for help with incorporating this into your project*
 - Incorporate a 3rd party API into your project.
       [It is highly suggested that any calls to 3rd party APIs are made _through your backend_.
 
