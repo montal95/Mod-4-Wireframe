@@ -27,7 +27,7 @@ In addition to using the above wire-frame to structure your App, your project sh
 - A sign-in page **note - this does not need to be a secure login - a user can sign in with just their username
 
 
-If you create a fully functional MVP and have time left over, you may begin to work on stretch goals. Keep in mind that this is an excellent opportunity for you to practice using tools that you may want to incorporate into your Mod 5 project. Feel free to set your own goals or to attempt any of the following suggestions:
+If you create a fully functional MVP and have time left over, you may begin to work on stretch goals. *Keep in mind that this is an excellent opportunity for you to practice using tools that you may want to incorporate into your Mod 5 project.* Feel free to set your own goals or to attempt any of the following suggestions:
 
 - **Strongly Recommended:** Style your App using basic CSS or by incorporating a CSS framework like Bootstrap, Semantic, Material UI, etc.
 - Add the ability to filter by body, date created, date edited, etc.
