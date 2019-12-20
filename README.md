@@ -36,6 +36,7 @@ If you create a fully functional MVP and have time left over, you may begin to w
 - User signup & login
 - Sharing notes with other users
 - Rich text formatting
+- Deploy your application on Heroku - [link](https://www.heroku.com/) *You will need to create a free account in order to deploy*
 - Emailing notes
 - Use google or facebook to login - *Check out [THIS](https://developers.google.com/identity/sign-in/web/sign-in) resource for help with incorporating this into your project*
 - Incorporate a 3rd party API into your project.
