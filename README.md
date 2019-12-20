@@ -32,10 +32,12 @@ If you create a fully functional MVP and have time left over, you may begin to w
 - **Strongly Recommended:** Style your App using basic CSS or by incorporating a CSS framework like Bootstrap, Semantic, Material UI, etc.
 - Add the ability to filter by body, date created, date edited, etc.
 - Sorting by date created, date edited, alphabetical, etc.
+- Search and view notes with a certain tag 
 - User signup & login
 - Sharing notes with other users
 - Rich text formatting
 - Emailing notes
+- Use google or facebook to login - *Check out [THIS](https://developers.google.com/identity/sign-in/web/sign-in) for help with incorporating this into your project*
 - Incorporate a 3rd party API into your project.
       [It is highly suggested that any calls to 3rd party APIs are made _through your backend_.
 
@@ -78,10 +80,8 @@ We'd recommend to begin by removing any of the default stuff given to you by Cre
 ## Redux Setup
 To setup Redux, these packages are required: redux, react-redux. Why? The answers are simple.
 + redux is the core that performs the magic 😄
-+ By default, React bindings are not included in Redux. With react-redux , these bindings will be explicitly installed.
-
-
-+ `npm install redux react-redux --save` - this installs Redux, React-Redux.
++ By default, React bindings are not included in Redux. With react-redux, these bindings will be explicitly installed.
++ `npm install redux react-redux` - this installs Redux, React-Redux.
 
 
 ## Notes
