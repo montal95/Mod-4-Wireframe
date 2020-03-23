@@ -1,4 +1,4 @@
-# Mod-4-Pilot-Project 
+# Mod-4-Wireframe-Project 
 
 You've made it! You're ready to build a React application with Redux! Before you start ideating, think about some of the project requirements. 
 
