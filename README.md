@@ -10,9 +10,9 @@ In the past, you've been responsible for determining the structure of your proje
 
 
 ![login](Login.png)
-![dash](Dash.png)
+![dash](Home.png)
 ![new](New.png)
-![edit](edit.png)
+![edit](Edit.png)
 ![show](Show.png)
 
 ## Requirements
