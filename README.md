@@ -20,9 +20,9 @@ In the past, you've been responsible for determining the structure of your proje
 In addition to using the above wire-frame to structure your App, your project should meet the following requirements:
 
 - Use a _Rails API backend_ with a separate _React frontend_ that are created in two different Github repositories.
-- Have at least three resources on the backend and your application. 
+- Have two resources on the backend and your application. 
 - You must have full CRUD actions for at least one resource (this will probably be your to-do item or note).
-- Use Redux for site navigation
+- Use Redux for state management
 - Use React Router for site navigation(see routes on wire-frame for guidance with this)
 - A sign-in page **note - this does not need to be a secure login - a user can sign in with just their username
 
@@ -31,6 +31,7 @@ If you create a fully functional MVP and have time left over, you may begin to w
 
 - **Strongly Recommended:** Style your App using basic CSS or by incorporating a CSS framework like Bootstrap, Semantic, Material UI, etc.
 - Add the ability to filter by body, date created, date edited, etc.
+- Add the ability to tag notes
 - Sorting by date created, date edited, alphabetical, etc.
 - Search and view notes with a certain tag 
 - User signup & login
