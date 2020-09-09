@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Input, Menu } from "semantic-ui-react";
-import { NavLink, withRouter } from "react-router-dom";
+import { Menu } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
 
 export default class Navbar extends Component {
   state = { activeItem: "home" };
@@ -12,7 +12,7 @@ export default class Navbar extends Component {
 
     return (
       <div id="navbar">
-        <Menu pointing secondary>
+        <Menu pointing secondary size="huge">
           <Menu.Item
             as={NavLink}
             to="/notes"
