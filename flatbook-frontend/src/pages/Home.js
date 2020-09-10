@@ -53,12 +53,12 @@ class Home extends Component {
 
   render() {
     const cards = () => {
-      if (this.props.notes) {
+      if (this.props.notes.length !== 0) {
         return this.props.notes.map((note) => (
           <IndexCard note={note} key={note.id} openNote={this.openNote} />
         ));
       } else {
-        return <p>Please add new notes</p>;
+        return <p>Please click 'New Notes' to add new notes</p>;
       }
     };
     return (

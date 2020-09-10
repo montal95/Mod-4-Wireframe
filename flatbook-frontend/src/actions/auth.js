@@ -17,3 +17,10 @@ export const currentUser = (user) => {
     user: user,
   };
 };
+
+export const signupSuccess = (user) => {
+  return {
+    type: "SIGNUP_SUCCESS",
+    user: user,
+  };
+};

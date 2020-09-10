@@ -16,15 +16,35 @@ class Navbar extends Component {
   render() {
     const { activeItem } = this.props.location.pathname;
     const token = localStorage.getItem("flatbookToken");
-    const loginButton = (
-      <Menu.Item
-        as={NavLink}
-        to="/login"
-        name="login"
-        active={activeItem === "/login"}
-      />
+    const loginButtons = (
+      <Menu.Menu position="right">
+        <Menu.Item
+          as={NavLink}
+          to="/signup"
+          name="signup"
+          active={activeItem === "/signup"}
+        />
+        <Menu.Item
+          as={NavLink}
+          to="/login"
+          name="login"
+          active={activeItem === "/login"}
+        />
+      </Menu.Menu>
     );
-    const logoutButton = <Menu.Item name="logout" onClick={this.clickLogout} />;
+    const logoutButtons = (
+      <Menu.Menu position="right">
+        <Menu.Item
+          as={NavLink}
+          to="/new"
+          name="new"
+          active={activeItem === "/new"}
+        >
+          New Note
+        </Menu.Item>
+        <Menu.Item name="logout" onClick={this.clickLogout} />
+      </Menu.Menu>
+    );
 
     return (
       <div id="navbar">
@@ -37,17 +57,7 @@ class Navbar extends Component {
           >
             Flatbook
           </Menu.Item>
-          <Menu.Menu position="right">
-            <Menu.Item
-              as={NavLink}
-              to="/new"
-              name="new"
-              active={activeItem === "/new"}
-            >
-              New Note
-            </Menu.Item>
-            {token ? logoutButton : loginButton}
-          </Menu.Menu>
+          {token ? logoutButtons : loginButtons}
         </Menu>
       </div>
     );
