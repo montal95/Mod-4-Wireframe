@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { Container, Button, Form } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { loginSuccess } from "../actions/auth";
 
 class Login extends Component {
   state = {
-    email: "",
-    password: "",
+    email: "sammontalvojr@gmail.com",
+    password: "password",
+    error: null,
   };
 
   handleChange = (e) => {
@@ -13,9 +16,34 @@ class Login extends Component {
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
+    const reqObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state),
+    };
+    const res = await fetch("http://localhost:5000/api/v1/auth", reqObj);
+    const data = await res.json();
+    if (data.error) {
+      this.setState({
+        error: data.error,
+      });
+    } else {
+      localStorage.setItem("flatbookToken", data.token);
+      this.props.loginSuccess(data);
+      this.props.history.push("/notes");
+    }
   };
+
+  componentDidMount() {
+    const token = localStorage.getItem("flatbookToken");
+    if (token) {
+      this.props.history.push("/notes");
+    }
+  }
 
   render() {
     return (
@@ -27,6 +55,7 @@ class Login extends Component {
               placeholder="E-mail"
               name="email"
               onChange={this.handleChange}
+              value={this.state.email}
             />
           </Form.Field>
           <Form.Field>
@@ -36,6 +65,7 @@ class Login extends Component {
               type="password"
               name="password"
               onChange={this.handleChange}
+              value={this.state.password}
             />
           </Form.Field>
           <Button type="submit">Submit</Button>
@@ -45,4 +75,8 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = {
+  loginSuccess,
+};
+
+export default connect(null, mapDispatchToProps)(Login);
