@@ -1,9 +1,8 @@
 import React from "react";
-import { Button, Card } from "semantic-ui-react";
+import { Button, Card, Icon } from "semantic-ui-react";
 
 const IndexCards = (props) => {
-  console.log(props.note);
-  const { id, title, contents } = props.note;
+  const { id, title, contents} = props.note;
   return (
     <Card>
       <Card.Content>
@@ -12,11 +11,11 @@ const IndexCards = (props) => {
       </Card.Content>
       <Card.Content extra>
         <div className="ui two buttons">
-          <Button basic color="green">
-            Approve
+          <Button inverted color="green" onClick={() => props.openNote(id)}>
+            <Icon name="magnify" size="large" />
           </Button>
-          <Button basic color="red">
-            Decline
+          <Button inverted color="red">
+            <Icon name="trash alternate outline" size="large" />
           </Button>
         </div>
       </Card.Content>
