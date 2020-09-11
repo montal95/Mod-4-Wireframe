@@ -75,9 +75,9 @@ class Navbar extends Component {
       <Menu.Menu position="right">
         <Menu.Item
           as={NavLink}
-          to="/new"
+          to="/notes/new"
           name="new"
-          active={activeItem === "/new"}
+          active={activeItem === "/notes/new"}
         >
           New Note
         </Menu.Item>
@@ -92,7 +92,7 @@ class Navbar extends Component {
             as={NavLink}
             to="/notes"
             name="home"
-            active={activeItem === "/home" || activeItem === "/"}
+            active={activeItem === "/notes"}
           >
             Flatbook
           </Menu.Item>
