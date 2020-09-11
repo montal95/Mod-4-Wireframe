@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Icon } from "semantic-ui-react";
 
 const IndexCards = (props) => {
-  const { id, title, contents} = props.note;
+  const { id, title, contents } = props.note;
   return (
     <Card>
       <Card.Content>
@@ -14,7 +14,7 @@ const IndexCards = (props) => {
           <Button inverted color="green" onClick={() => props.openNote(id)}>
             <Icon name="magnify" size="large" />
           </Button>
-          <Button inverted color="red">
+          <Button inverted color="red" onClick={() => props.deleteNote(id)}>
             <Icon name="trash alternate outline" size="large" />
           </Button>
         </div>

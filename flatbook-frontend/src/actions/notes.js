@@ -10,3 +10,17 @@ export const wipeAllNotes = () => {
     type: "WIPE_ALL_NOTES",
   };
 };
+
+export const addNote = (notes) => {
+  return {
+    type: "ADD_NOTE",
+    notes: notes,
+  };
+};
+
+export const deleteNote = (notes) => {
+  return {
+    type: "DELETE_NOTE",
+    notes: notes,
+  };
+};

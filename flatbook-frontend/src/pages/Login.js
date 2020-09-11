@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Container, Button, Form } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { loginSuccess } from "../actions/auth";
+import { getNotes } from "../actions/notes";
 
 class Login extends Component {
   state = {
@@ -34,8 +35,21 @@ class Login extends Component {
     } else {
       localStorage.setItem("flatbookToken", data.token);
       this.props.loginSuccess(data);
+      this.fetchNotes();
       this.props.history.push("/notes");
     }
+  };
+
+  fetchNotes = async () => {
+    const reqObj = {
+      method: "GET",
+      headers: {
+        id: `${this.props.auth.id}`,
+      },
+    };
+    const res = await fetch("http://localhost:5000/api/v1/notes", reqObj);
+    const notes = await res.json();
+    this.props.getNotes(notes);
   };
 
   componentDidMount() {
@@ -75,8 +89,16 @@ class Login extends Component {
   }
 }
 
-const mapDispatchToProps = {
-  loginSuccess,
+const setStateToProps = (state) => {
+  return {
+    auth: state.auth,
+    notes: state.notes,
+  };
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+const mapDispatchToProps = {
+  loginSuccess,
+  getNotes,
+};
+
+export default connect(setStateToProps, mapDispatchToProps)(Login);

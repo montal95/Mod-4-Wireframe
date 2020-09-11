@@ -1,61 +1,46 @@
 import React, { Component } from "react";
 import { Container, Card } from "semantic-ui-react";
-import { currentUser } from "../actions/auth";
-import { getNotes } from "../actions/notes";
+import { deleteNote } from "../actions/notes";
 import { connect } from "react-redux";
 import IndexCard from "../components/IndexCards";
 
 class Home extends Component {
+  state = { loading: true };
   componentDidMount() {
     const token = localStorage.getItem("flatbookToken");
     if (!token) {
       this.props.history.push("/login");
     } else {
-      this.checkToken(token);
+      this.setState({ loading: false });
     }
   }
 
-  checkToken = async (token) => {
-    const reqObj = {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    const res = await fetch(
-      "http://localhost:5000/api/v1/current_user",
-      reqObj
-    );
-    const data = await res.json();
-    if (data.error) {
-      this.props.history.push("/login");
-    } else {
-      this.props.currentUser(data);
-      this.fetchNotes();
-    }
-  };
-
-  fetchNotes = async () => {
-    const reqObj = {
-      method: "GET",
-      headers: {
-        id: `${this.props.auth.id}`,
-      },
-    };
-    const res = await fetch("http://localhost:5000/api/v1/notes", reqObj);
-    const notes = await res.json();
-    this.props.getNotes(notes);
-  };
-
   openNote = (id) => {
     this.props.history.push(`/notes/${id}`);
+  };
+
+  deleteNote = async (id) => {
+    console.log("hit delete for id", id);
+    const res = await fetch(`http://localhost:5000/api/v1/notes/${id}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    if (data.status === 200) {
+      const updatedNotes = this.props.notes.filter((note) => note.id !== id);
+      this.props.deleteNote(updatedNotes);
+    }
   };
 
   render() {
     const cards = () => {
       if (this.props.notes.length !== 0) {
         return this.props.notes.map((note) => (
-          <IndexCard note={note} key={note.id} openNote={this.openNote} />
+          <IndexCard
+            note={note}
+            key={note.id}
+            openNote={this.openNote}
+            deleteNote={this.deleteNote}
+          />
         ));
       } else {
         return <p>Please click 'New Notes' to add new notes</p>;
@@ -78,8 +63,7 @@ const setStateToProps = (state) => {
 };
 
 const setDispatchToProps = {
-  currentUser,
-  getNotes,
+  deleteNote,
 };
 
 export default connect(setStateToProps, setDispatchToProps)(Home);
