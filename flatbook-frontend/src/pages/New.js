@@ -25,9 +25,7 @@ class New extends Component {
     const res = await fetch("http://localhost:5000/api/v1/notes", reqObj);
     const newNote = await res.json();
     if (newNote.error) {
-      this.setState({
-        error: newNote.error,
-      });
+      this.setState({ error: newNote.error });
     } else {
       const updatedNotes = [...this.props.notes, newNote];
       this.props.addNote(updatedNotes);

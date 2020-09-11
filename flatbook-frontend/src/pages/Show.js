@@ -6,7 +6,6 @@ import { deleteNote } from "../actions/notes";
 
 class Show extends Component {
   deleteNote = async (id) => {
-    console.log("hit delete for id", id);
     const res = await fetch(`http://localhost:5000/api/v1/notes/${id}`, {
       method: "DELETE",
     });
@@ -22,7 +21,6 @@ class Show extends Component {
     const id = parseInt(path[path.length - 1]);
     const { notes } = this.props;
     const note = notes.find((note) => note.id === id);
-    console.log(note);
     return (
       <Container text>
         {note === undefined ? (
@@ -33,8 +31,12 @@ class Show extends Component {
             <Divider />
             <p className="showContents">{note.contents}</p>
             <Button.Group>
-              <Button as={Link} to='/notes'>All Notes</Button>
-              <Button>Edit</Button>
+              <Button as={Link} to="/notes">
+                All Notes
+              </Button>
+              <Button as={Link} to={`/notes/edit/${id}`}>
+                Edit
+              </Button>
               <Button negative onClick={() => deleteNote(id)}>
                 Delete
               </Button>

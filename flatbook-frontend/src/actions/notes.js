@@ -24,3 +24,9 @@ export const deleteNote = (notes) => {
     notes: notes,
   };
 };
+export const updateNote = (notes) => {
+  return {
+    type: "UPDATE_NOTE",
+    notes: notes,
+  };
+};

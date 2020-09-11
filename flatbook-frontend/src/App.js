@@ -6,6 +6,7 @@ import New from "./pages/New";
 import Show from "./pages/Show";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
+import Edit from "./pages/Edit";
 
 const App = () => {
   return (
@@ -18,7 +19,8 @@ const App = () => {
           <Route exact path="/notes/new" component={New} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/" component={Home} />
-          <Route path="/notes/:id" component={Show} />
+          <Route exact path="/notes/:id" component={Show} />
+          <Route exact path="/notes/edit/:id" component={Edit} />
         </Switch>
       </div>
     </BrowserRouter>

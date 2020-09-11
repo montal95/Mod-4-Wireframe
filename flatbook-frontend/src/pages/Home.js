@@ -8,11 +8,9 @@ class Home extends Component {
   state = { loading: true };
   componentDidMount() {
     const token = localStorage.getItem("flatbookToken");
-    if (!token) {
-      this.props.history.push("/login");
-    } else {
-      this.setState({ loading: false });
-    }
+    !token
+      ? this.props.history.push("/login")
+      : this.setState({ loading: false });
   }
 
   openNote = (id) => {
