@@ -8,8 +8,8 @@ const URL = process.env.REACT_APP_API_URL;
 
 class Login extends Component {
   state = {
-    email: "sammontalvojr@gmail.com",
-    password: "password",
+    email: "",
+    password: "",
     error: null,
   };
 
