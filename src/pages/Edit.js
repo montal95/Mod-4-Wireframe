@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { updateNote } from "../actions/notes";
 
+const URL = process.env.REACT_APP_API_URL;
+
 class Edit extends Component {
   state = { id: "", title: "", contents: "" };
 
@@ -14,7 +16,7 @@ class Edit extends Component {
   }
 
   setInitialState = async (id) => {
-    const res = await fetch(`http://localhost:5000/api/v1/notes/${id}`);
+    const res = await fetch(`${URL}/api/v1/notes/${id}`);
     const note = await res.json();
     this.setState({ id: id, title: note.title, contents: note.contents });
   };
@@ -35,10 +37,7 @@ class Edit extends Component {
         contents: this.state.contents,
       }),
     };
-    const res = await fetch(
-      `http://localhost:5000/api/v1/notes/${this.state.id}`,
-      reqObj
-    );
+    const res = await fetch(`${URL}/api/v1/notes/${this.state.id}`, reqObj);
     const updatedNote = await res.json();
     if (res.status === 200) {
       const prevNotes = this.props.notes.filter(

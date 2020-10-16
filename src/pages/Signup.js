@@ -3,6 +3,8 @@ import { Container, Button, Form } from "semantic-ui-react";
 import { signupSuccess } from "../actions/auth";
 import { connect } from "react-redux";
 
+const URL = process.env.REACT_APP_API_URL;
+
 class Signup extends Component {
   state = {
     email: "",
@@ -26,7 +28,7 @@ class Signup extends Component {
       },
       body: JSON.stringify(this.state),
     };
-    const res = await fetch("http://localhost:5000/api/v1/users", reqObj);
+    const res = await fetch(`${URL}/api/v1/users`, reqObj);
     const data = await res.json();
     if (data.error) {
       this.setState({

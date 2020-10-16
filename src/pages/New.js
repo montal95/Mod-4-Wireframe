@@ -3,6 +3,7 @@ import { Container, Button, Form } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { addNote } from "../actions/notes";
 
+const URL = process.env.REACT_APP_API_URL;
 class New extends Component {
   state = { title: "", contents: "", error: null };
 
@@ -22,7 +23,7 @@ class New extends Component {
       },
       body: JSON.stringify(this.state),
     };
-    const res = await fetch("http://localhost:5000/api/v1/notes", reqObj);
+    const res = await fetch(`${URL}/api/v1/notes`, reqObj);
     const newNote = await res.json();
     if (newNote.error) {
       this.setState({ error: newNote.error });

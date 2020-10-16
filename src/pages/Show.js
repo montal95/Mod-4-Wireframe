@@ -4,9 +4,11 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { deleteNote } from "../actions/notes";
 
+const URL = process.env.REACT_APP_API_URL;
+
 class Show extends Component {
   deleteNote = async (id) => {
-    const res = await fetch(`http://localhost:5000/api/v1/notes/${id}`, {
+    const res = await fetch(`${URL}/api/v1/notes/${id}`, {
       method: "DELETE",
     });
     const data = await res.json();

@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { logoutSuccess, currentUser } from "../actions/auth";
 import { getNotes, wipeAllNotes } from "../actions/notes";
 
+const URL = process.env.REACT_APP_API_URL;
+
 class Navbar extends Component {
   clickLogout = () => {
     localStorage.removeItem("flatbookToken");
@@ -27,10 +29,7 @@ class Navbar extends Component {
         Authorization: `Bearer ${token}`,
       },
     };
-    const res = await fetch(
-      "http://localhost:5000/api/v1/current_user",
-      reqObj
-    );
+    const res = await fetch(`${URL}/api/v1/current_user`, reqObj);
     const data = await res.json();
     if (data.error) {
       this.props.history.push("/login");
@@ -47,7 +46,7 @@ class Navbar extends Component {
         id: `${this.props.auth.id}`,
       },
     };
-    const res = await fetch("http://localhost:5000/api/v1/notes", reqObj);
+    const res = await fetch(`${URL}/api/v1/notes`, reqObj);
     const notes = await res.json();
     this.props.getNotes(notes);
   };

@@ -8,8 +8,11 @@ import rootReducer from "./reducers/index";
 import "semantic-ui-css/semantic.min.css";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
+import dotenv from 'dotenv';
 
 import { createStore } from "redux";
+
+dotenv.config()
 
 const store = createStore(
   rootReducer,

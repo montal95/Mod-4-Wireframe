@@ -4,6 +4,8 @@ import { deleteNote } from "../actions/notes";
 import { connect } from "react-redux";
 import IndexCard from "../components/IndexCards";
 
+const URL = process.env.REACT_APP_API_URL;
+
 class Home extends Component {
   state = { loading: true };
   componentDidMount() {
@@ -19,7 +21,7 @@ class Home extends Component {
 
   deleteNote = async (id) => {
     console.log("hit delete for id", id);
-    const res = await fetch(`http://localhost:5000/api/v1/notes/${id}`, {
+    const res = await fetch(`${URL}/api/v1/notes/${id}`, {
       method: "DELETE",
     });
     const data = await res.json();

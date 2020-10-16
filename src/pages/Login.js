@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { loginSuccess } from "../actions/auth";
 import { getNotes } from "../actions/notes";
 
+const URL = process.env.REACT_APP_API_URL;
+
 class Login extends Component {
   state = {
     email: "sammontalvojr@gmail.com",
@@ -26,7 +28,7 @@ class Login extends Component {
       },
       body: JSON.stringify(this.state),
     };
-    const res = await fetch("http://localhost:5000/api/v1/auth", reqObj);
+    const res = await fetch(`${URL}/api/v1/auth`, reqObj);
     const data = await res.json();
     if (data.error) {
       this.setState({
@@ -47,7 +49,7 @@ class Login extends Component {
         id: `${this.props.auth.id}`,
       },
     };
-    const res = await fetch("http://localhost:5000/api/v1/notes", reqObj);
+    const res = await fetch(`${URL}/api/v1/notes`, reqObj);
     const notes = await res.json();
     this.props.getNotes(notes);
   };
